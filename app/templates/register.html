@@ -1,0 +1,38 @@
+{% block content %}
+{%load static%}
+<link rel="stylesheet" href="{% static 'style.css'%}">
+<form method="post" class="signup-form">
+    {%csrf_token%}
+    <table>
+        <tr>
+            <td>
+                <label for="id_first_name">Enter your firstname:</label>
+                {{forms.first_name}}      
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                <label for="id_last_name">Enter your lastname:</label>
+                {{forms.last_name}}   
+        
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                <label for="id_password">Enter your password:</label>
+                {{forms.password}}   
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                <label for="id_email">Enter your email:</label>
+                {{forms.email}}   
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Register</button>
+</form>
+{% endblock content %}
